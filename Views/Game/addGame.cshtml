@@ -1,0 +1,29 @@
+@model WebMVCapp1.Models.Game
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Game</title>
+</head>
+<body>
+<div>
+    <form asp-controller="Game" asp-action="AddGame" method="post">
+        <label for="gameTitle">Game Title:</label>
+        <input type="text" id="gameTitle" name="GameTitle" required />
+            
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="imageUrl" name="ImageUrl" required />
+
+        <label for="gameDescription">Game Description:</label>
+        <textarea id="gameDescription" name="GameDescription" required></textarea>
+
+        <button type="submit">Add</button>
+    </form>
+</div>
+</body>
+</html>

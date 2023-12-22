@@ -1,0 +1,16 @@
+@model WebMVCapp1.Models.Game
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Game Added Successfully</title>
+</head>
+<body>
+<div>
+    <p><h2>Game added successfully</h2></p>
+    <p>Game ID: @Model.GameId</p>
+    <p>Game Name: @Model.GameTitle</p>
+    <a class="btn-link" href="@Url.Action("Index", "Home")">Go back</a>
+</div>
+</body>
+</html>

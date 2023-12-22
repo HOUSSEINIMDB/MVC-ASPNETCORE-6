@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    
+    @if(((System.Security.Claims.ClaimsIdentity)User.Identity).HasClaim("Role", "User"))
+        {
+        <a class="btn-link" href="@Url.Action("UserStore", "Game", new { clientId = ViewData["ClientId"] })">Store Page</a>
+        }
+    @if(((System.Security.Claims.ClaimsIdentity)User.Identity).HasClaim("Role", "Admin"))
+    {
+            <!-- the "Admin" role -->
+            <a class="btn-link" href="@Url.Action("AddGame", "Game")">Add Game</a>
+            <br/>
+            <a class="btn-link" href="@Url.Action("GamesList", "Game")">Admin for games</a>
+    }
+</div>

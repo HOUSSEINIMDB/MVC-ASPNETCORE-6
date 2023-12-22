@@ -1,0 +1,31 @@
+@model WebMVCapp1.Models.GameItem
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Add Game Item</title>
+</head>
+<body>
+<div>
+    <h2>Add Game Item</h2>
+    <form asp-controller="Game" asp-action="AddGameItem" method="post">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <label for="serialNumber">Serial Number:</label>
+        <input type="text" id="serialNumber" name="SerialNumber" required />
+        <span asp-validation-for="SerialNumber" class="text-danger"></span>
+
+        <label for="gameId">Game ID:</label>
+        <input type="number" id="gameId" name="GameId" required />
+        <span asp-validation-for="GameId" class="text-danger"></span>
+
+        <label for="cartId">Cart ID (optional):</label>
+        <input type="number" id="cartId" name="CartId" />
+        <span asp-validation-for="CartId" class="text-danger"></span>
+
+        <button type="submit">Add Game Item</button>
+    </form>
+</div>
+</body>
+</html>

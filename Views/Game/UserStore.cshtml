@@ -1,0 +1,51 @@
+@model System.Collections.Generic.List<WebMVCapp1.Models.Game>
+
+@{
+ 
+    var clientId = ViewData["ClientId"] as int?;
+}
+
+
+
+<html>
+
+<head>
+     <style>
+           .card {
+               height: 100%; 
+           }
+       
+           .card img {
+               height: 100%; 
+               object-fit: cover; 
+           }
+       </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Welcome to the Shop</h1>
+   
+   <div class="row">
+       @foreach (var item in Model)
+       {
+           <div class="col-md-4">
+               <div class="card">
+                   <img src="~/Img/@item.ImageUrl" class="card-img-top" alt="@item.GameTitle">
+                   <div class="card-body">
+                       <h5 class="card-title">@item.GameTitle</h5>
+                       <p class="card-text">@item.GameDescription</p>
+                       <div class="btn-group">
+                           <a href="@Url.Action("Buy", new { clientId = clientId, gameId = item.GameId })" class="btn btn-primary">Buy</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       }
+   </div>
+
+</div>
+
+</body>
+</html>

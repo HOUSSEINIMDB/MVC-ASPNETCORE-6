@@ -1,0 +1,37 @@
+@model WebMVCapp1.Models.Game
+
+@{
+    Layout = null;
+}
+@*asp-for to render this view before you edit*@
+@*name for model binding after you edit*@
+@*id for the frontend javascript of this view*@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Edit Game</title>
+</head>
+<body>
+<div>
+    <h2>Edit Game</h2>
+    <form asp-controller="Game" asp-action="EditGame" method="post">
+        <input type="hidden" asp-for="GameId" />
+
+        <label for="gameTitle">Game Title:</label>
+        <input type="text" id="gameTitle" name="GameTitle" asp-for="GameTitle" required />
+        <span asp-validation-for="GameTitle" class="text-danger"></span>
+
+        <label for="imageUrl">Image URL:</label>
+        <input type="text" id="imageUrl" name="ImageUrl" asp-for="ImageUrl" required />
+        <span asp-validation-for="ImageUrl" class="text-danger"></span>
+
+        <label for="gameDescription">Game Description:</label>
+        <textarea id="gameDescription" name="GameDescription" asp-for="GameDescription" required></textarea>
+        <span asp-validation-for="GameDescription" class="text-danger"></span>
+
+        <button type="submit">Save Changes</button>
+    </form>
+</div>
+</body>
+</html>

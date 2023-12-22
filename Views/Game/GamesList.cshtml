@@ -1,0 +1,28 @@
+@model IEnumerable<WebMVCapp1.Models.Game>
+
+@{
+    ViewData["Title"] = "GamesList";
+}
+<div class="container">
+    <h1>Games List</h1>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="@item.ImageUrl" class="card-img-top" alt="@item.GameTitle">
+                    <div class="card-body">
+                        <h5 class="card-title">@item.GameTitle</h5>
+                        <p class="card-text">@item.GameDescription</p>
+                        <div class="btn-group">
+                            @*Get the game avec le GameId*@
+                            <a href="@Url.Action("EditGame", new { id = item.GameId })" class="btn btn-warning">Edit</a>
+                            @* <a href="@Url.Action("Delete", new { id = item.GameId })" class="btn btn-danger">Delete</a> *@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
