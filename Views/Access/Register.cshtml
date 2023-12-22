@@ -1,0 +1,47 @@
+@model WebMVCapp1.Models.Client
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <form asp-controller="Access" asp-action="Register" method="post">
+        <div class="form-group">
+            <label for="FirstName">First Name:</label>
+            <input type="text" class="form-control" id="FirstName" name="FirstName" required/>
+        </div>
+        <div class="form-group">
+            <label for="LastName">Last Name:</label>
+            <input type="text" class="form-control" id="LastName" name="LastName" required/>
+        </div>
+        <div class="form-group">
+            <label for="BirthDate">Birth Date:</label>
+            <input type="date" class="form-control" id="BirthDate" name="BirthDate" required/>
+        </div>
+        <div class="form-group">
+            <label for="Login">Login:</label>
+            <input type="text" class="form-control" id="Login" name="Login" required/>
+            @if (ViewData.ModelState.TryGetValue("Client.Login", out var loginErrors))
+            {
+                <div class="text-danger">@string.Join(", ", loginErrors.Errors.Select(e => e.ErrorMessage))</div>
+            }
+        </div>
+
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="password" class="form-control" id="Password" name="Password" required/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+</body>
+</html>

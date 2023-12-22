@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/housseinimdb/RiderProjects/WebMVCapp1/WebMVCapp1/WebMVCapp1.csproj": {}
+  },
+  "projects": {
+    "/home/housseinimdb/RiderProjects/WebMVCapp1/WebMVCapp1/WebMVCapp1.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/housseinimdb/RiderProjects/WebMVCapp1/WebMVCapp1/WebMVCapp1.csproj",
+        "projectName": "WebMVCapp1",
+        "projectPath": "/home/housseinimdb/RiderProjects/WebMVCapp1/WebMVCapp1/WebMVCapp1.csproj",
+        "packagesPath": "/home/housseinimdb/.nuget/packages/",
+        "outputPath": "/home/housseinimdb/RiderProjects/WebMVCapp1/WebMVCapp1/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/housseinimdb/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[6.0.25, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.22, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[6.0.16, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.414/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

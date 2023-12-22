@@ -1,0 +1,35 @@
+@model WebMVCapp1.Models.Client
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-3">
+    <form asp-controller="Access" asp-action="Login" method="post">
+        <div class="form-group">
+            <label for="Login">Login:</label>
+            <input type="text" class="form-control" id="Login" name="Login" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="Password">Password:</label>
+            <input type="password" class="form-control" id="Password" name="Password" required/>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Connect</button>
+    </form>
+
+    <div class="mt-3">
+        <p>If you don't have an account, <a href="@Url.Action("Register", "Access")" class="btn btn-outline-primary">Register</a> here.</p>
+    </div>
+</div>
+</body>
+</html>
